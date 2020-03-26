@@ -1,1 +1,39 @@
+<?php
+    $currentTodoDisplay='';
+    $completedTodoDisplay='';
+foreach ($todos as $todo) {
+    if ($todo['deletedFlag'] != 1 && $todo['completedFlag'] !=1) {
+        if ($todo['urgentFlag'] == 1) {
+            $currentTodoDisplay .='<div class="urgent">';
+        } else {
+            $currentTodoDisplay .='<div>';
+        }
+        $currentTodoDisplay .= $todo['taskName'] . '</div>';
+
+    }
+    if ($todo['deletedFlag'] != 1 && $todo['completedFlag'] !=0) {
+        $completedTodoDisplay .= '<div>' . $todo['taskName'] . '</div>';
+    }
+}
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Todos - See All Todos</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+</head>
+<body>
 <h1>Todos</h1>
+<section>
+    <h2>Still todo:</h2>
+    <?php echo $currentTodoDisplay; ?>
+</section>
+<section>
+    <h2>Already done:</h2>
+    <?php echo $completedTodoDisplay; ?>
+</section>
+</body>
+
+</html>
