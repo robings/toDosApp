@@ -39,7 +39,7 @@ input {
     margin: 5px 0;
 }
 
-.deleteButton {
+.button {
     padding: 5px;
     border: 1px solid #999999;
     border-radius: 5px;
@@ -47,7 +47,7 @@ input {
     color: #000000;
 }
 
-.deleteButton:hover {
+.button:hover {
     color: red;
     border-color: #000000;
     cursor: pointer;

@@ -17,6 +17,6 @@ return function (App $app) {
 
     $app->get('/', 'SeeAllTodosController');
     $app->post('/add', 'AddTodoController');
-//    $app->delete('/', 'DeleteTodoController');
+    $app->delete('/', 'DeleteTodoController');
 
 };
