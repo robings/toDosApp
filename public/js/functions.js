@@ -51,11 +51,22 @@ function addEditEventListeners(editButtons) {
         editButton.addEventListener('click', (e) => {
             idForEdit = e.target.dataset.id
             console.log(idForEdit)
-            console.log(e.target.parentElement.className)
+            console.log(e.target.parentElement.childElementCount)
+
             document.getElementById('taskName').value = e.target.parentNode.firstChild.textContent
-            if (e.target.parentElement.className == 'urgent') {
+
+            if (e.target.parentElement.className === 'urgent') {
                 document.getElementById('urgentFlag').checked=true
+            } else {
+                document.getElementById('urgentFlag').checked=false
             }
+
+            if (e.target.parentElement.childElementCount === 2) {
+                document.getElementById('completedFlag').checked=true
+            } else {
+                document.getElementById('completedFlag').checked=false
+            }
+
             document.getElementById('editForm').style.display='block'
         })
     })

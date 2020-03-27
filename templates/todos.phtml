@@ -46,10 +46,12 @@ foreach ($todos as $todo) {
 </section>
 
 <form id="editForm">
+    <h2>Edit Task</h2>
     <label>Task:</label><input type="text" id="taskName" name="taskName" />
     <label>Urgent</label><input type="checkbox" id="urgentFlag" name="urgentFlag" />
     <label>Completed</label><input type="checkbox" id="completedFlag" name="completedFlag" />
-    <button id="editFormButton">Submit</button>
+    <div class="button closeEditForm" id="closeEditFormButton">X</div>
+    <div class="button submitEdit" id="editFormButton">Submit</div>
 </form>
 </body>
 

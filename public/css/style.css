@@ -67,9 +67,26 @@ input {
 
 #editForm {
     display: none;
-    background-color: #FFFFFF;
+    background-color: #CA6702;
+    color: #FFFFFF;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%)
+}
+
+#editForm h2 {
+    padding: 0 0 10px 0;
+    margin: 0;
+}
+
+#editForm .button {
+    padding: 3px;
+    border-color: #FFFFFF;
+    margin: 0 0 0 5px;
+    font-size: 0.75rem;
+}
+
+#editForm .button:hover {
+    border-color: #000000;
 }
