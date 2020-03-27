@@ -26,8 +26,11 @@ foreach ($todos as $todo) {
 </head>
 <body>
 <h1>Todos</h1>
-<form>
-    <label>Task: </label><input type="text" name="taskName" />
+<form method="post" action="/add">
+    <label>Task:</label><input type="text" name="taskName" />
+    <label>Urgent</label><input type="checkbox" name="urgentFlag" />
+    <label>Completed</label><input type="checkbox" name="completedFlag" />
+    <input type="submit" value="Add" />
 </form>
 <section>
     <h2>Still todo:</h2>
