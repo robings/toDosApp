@@ -89,19 +89,19 @@ function editFetch() {
 
     console.log(idForEdit, completedFlagForEdit, urgentFlagForEdit)
 
-    // fetch('/', {
-    //     method: 'PUT',
-    //     body: JSON.stringify({"id": idForEdit}),
-    //     headers: {
-    //         "Content-Type": "application/json"
-    //     }
-    // })
-    //     .then((data) => data.json())
-    //     .then((success) => {
-    //         if (success['success']=1) {
-    //             window.location.reload(true)
-    //         } else {
-    //             console.log('Complete unsuccessful')
-    //         }
-    //     })
+    fetch('/edit', {
+        method: 'PUT',
+        body: JSON.stringify({ "id":idForEdit, "taskName":taskNameForEdit, "completedFlag":completedFlagForEdit, "urgentFlag":urgentFlagForEdit }),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+        .then((data) => data.json())
+        .then((success) => {
+            if (success['success']=1) {
+                window.location.reload(true)
+            } else {
+                console.log('Complete unsuccessful')
+            }
+        })
 }

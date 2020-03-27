@@ -43,7 +43,11 @@ class TodoModel
 
     public function editTodo($todo)
     {
-        //to do code for the query
+        $id=$todo['id'];
+        $taskName=$todo['taskName'];
+        $completedFlag=$todo['completedFlag'];
+        $urgentFlag=$todo['urgentFlag'];
+
         $query= $this->dbConnection->prepare( "UPDATE `todos` SET `taskName` = :taskName, `completedFlag` = :completedFlag, `urgentFlag` = :urgentFlag WHERE `id` = :id");
         $query->bindParam(':id', $id);
         $query->bindParam(':taskName', $taskName);
