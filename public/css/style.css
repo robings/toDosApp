@@ -18,3 +18,15 @@ h2 {
 .urgent {
     color: #FF0000;
 }
+
+form {
+    padding: 10px 20px;
+    border: 1px solid #999999;
+    border-radius: 5px;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+
+input {
+    margin: 0 5px;
+}

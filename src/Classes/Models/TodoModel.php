@@ -17,4 +17,14 @@ class TodoModel
         $query->execute();
         return $query->fetchAll();
     }
+
+    public function addTodo($taskName, $completedFlag, $urgentFlag)
+    {
+        $query= $this->dbConnection->prepare( "INSERT INTO `todos` (`taskName`, `completedFlag`, `urgentFlag`) VALUES (:taskName, :completedFlag, :urgentFlag);");
+        $query->bindParam(':taskName', $taskName);
+        $query->bindParam(':completedFlag', $completedFlag);
+        $query->bindParam(':urgentFlag', $urgentFlag);
+        $query->execute();
+        return $query;
+    }
 }
