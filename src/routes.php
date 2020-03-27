@@ -19,5 +19,6 @@ return function (App $app) {
     $app->post('/add', 'AddTodoController');
     $app->delete('/', 'DeleteTodoController');
     $app->put('/', 'CompleteTodoController');
+    $app->put('/edit', 'EditTodoController');
 
 };

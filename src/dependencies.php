@@ -33,5 +33,6 @@ return function (App $app) {
     $container['AddTodoController'] = new Todos\Factories\AddTodoControllerFactory();
     $container['DeleteTodoController'] = new Todos\Factories\DeleteTodoControllerFactory();
     $container['CompleteTodoController'] = new Todos\Factories\CompleteTodoControllerFactory();
+    $container['EditTodoController'] = new Todos\Factories\EditTodoControllerFactory();
 
 };
