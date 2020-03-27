@@ -21,7 +21,10 @@ class AddTodoController
        $result= $request->getParsedBody();
        if ($result['taskName']) {
            $taskName = $result['taskName'];
+           $taskName = trim ($taskName);
+           $taskName = htmlentities($taskName);
        }
+
         if ($result['completedFlag']) {
             $completedFlag = 1;
         } else {
