@@ -2,14 +2,14 @@
 
 namespace Todos\Factories;
 
-use Todos\Controllers\DeleteTodoController;
+use Todos\Controllers\CompleteTodoController;
 use Psr\Container\ContainerInterface;
 
-class DeleteTodoControllerFactory
+class CompleteTodoControllerFactory
 {
     public function __invoke(ContainerInterface $container)
     {
         $todoModel = $container->get('todoModel');
-        return new DeleteTodoController($todoModel);
+        return new CompleteTodoController($todoModel);
     }
 }
