@@ -10,3 +10,5 @@ addEditEventListeners(editButtons)
 document.getElementById('closeEditFormButton').addEventListener('click', (e)=> {
     document.getElementById('editForm').style.display='none'
 })
+
+document.getElementById('editFormButton').addEventListener('click', editFetch)

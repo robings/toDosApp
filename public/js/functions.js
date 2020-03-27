@@ -49,9 +49,6 @@ function addCompleteEventListeners(completeButtons) {
 function addEditEventListeners(editButtons) {
     editButtons.forEach(function (editButton) {
         editButton.addEventListener('click', (e) => {
-            idForEdit = e.target.dataset.id
-            console.log(idForEdit)
-            console.log(e.target.parentElement.childElementCount)
 
             document.getElementById('taskName').value = e.target.parentNode.firstChild.textContent
 
@@ -67,25 +64,44 @@ function addEditEventListeners(editButtons) {
                 document.getElementById('completedFlag').checked=false
             }
 
+            document.getElementById('idForEdit').value = e.target.dataset.id
+
             document.getElementById('editForm').style.display='block'
         })
     })
 }
 
-function editFetch($idForComplete, $taskName, $completedFlag, $urgentFlag) {
-    fetch('/', {
-        method: 'PUT',
-        body: JSON.stringify({"id": idForComplete}),
-        headers: {
-            "Content-Type": "application/json"
-        }
-    })
-        .then((data) => data.json())
-        .then((success) => {
-            if (success['success']=1) {
-                window.location.reload(true)
-            } else {
-                console.log('Complete unsuccessful')
-            }
-        })
+function editFetch() {
+    document.getElementById('editForm').style.display='none'
+    idForEdit=document.getElementById('idForEdit').value
+    taskNameForEdit=document.getElementById('taskName').value
+    if (document.getElementById('completedFlag').checked) {
+        completedFlagForEdit=1
+    } else {
+        completedFlagForEdit=0
+    }
+
+    if (document.getElementById('urgentFlag').checked) {
+        urgentFlagForEdit=1
+    } else {
+        urgentFlagForEdit=0
+    }
+
+    console.log(idForEdit, completedFlagForEdit, urgentFlagForEdit)
+
+    // fetch('/', {
+    //     method: 'PUT',
+    //     body: JSON.stringify({"id": idForEdit}),
+    //     headers: {
+    //         "Content-Type": "application/json"
+    //     }
+    // })
+    //     .then((data) => data.json())
+    //     .then((success) => {
+    //         if (success['success']=1) {
+    //             window.location.reload(true)
+    //         } else {
+    //             console.log('Complete unsuccessful')
+    //         }
+    //     })
 }
