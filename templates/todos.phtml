@@ -4,16 +4,18 @@
 foreach ($todos as $todo) {
     if ($todo['deletedFlag'] != 1 && $todo['completedFlag'] !=1) {
         if ($todo['urgentFlag'] == 1) {
-            $currentTodoDisplay .='<div class="urgent">';
+            $currentTodoDisplay .='<div class="todoContainer"><div class="urgent">';
         } else {
-            $currentTodoDisplay .='<div>';
+            $currentTodoDisplay .='<div class="todoContainer"><div>';
         }
-        $currentTodoDisplay .= $todo['taskName'] . '</div>';
+        $currentTodoDisplay .= $todo['taskName'] . '<div class="delete button" data-id="' . $todo['id'] . '">X</div></div></div>';
+
 
     }
     if ($todo['deletedFlag'] != 1 && $todo['completedFlag'] !=0) {
-        $completedTodoDisplay .= '<div>' . $todo['taskName'] . '</div>';
+        $completedTodoDisplay .= '<div class="todoContainer"><div>' . $todo['taskName'] . '<div class="delete button" data-id="' . $todo['id'] . '">X</div></div><div>';
     }
+
 }
 ?>
 
@@ -23,6 +25,8 @@ foreach ($todos as $todo) {
 <head>
     <title>Todos - See All Todos</title>
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <script defer src="./js/functions.js"></script>
+    <script defer src="./js/script.js"></script>
 </head>
 <body>
 <h1>Todos</h1>

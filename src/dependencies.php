@@ -31,5 +31,6 @@ return function (App $app) {
     $container['SeeAllTodosController'] = new Todos\Factories\SeeAllTodosControllerFactory();
     $container['todoModel'] = new Todos\Factories\TodoModelFactory();
     $container['AddTodoController'] = new Todos\Factories\AddTodoControllerFactory();
+    $container['DeleteTodoController'] = new Todos\Factories\DeleteTodoControllerFactory();
 
 };

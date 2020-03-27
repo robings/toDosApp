@@ -30,3 +30,25 @@ form {
 input {
     margin: 0 5px;
 }
+
+.todoContainer {
+    overflow: auto;
+    border: 1px solid #999999;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px 0;
+}
+
+.button {
+    padding: 5px;
+    border: 1px solid #999999;
+    border-radius: 5px;
+    float: right;
+    color: #000000;
+}
+
+.button:hover {
+    color: red;
+    border-color: #000000;
+    cursor: pointer;
+}
