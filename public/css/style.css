@@ -26,3 +26,7 @@ form {
     width: -moz-fit-content;
     width: fit-content;
 }
+
+input {
+    margin: 0 5px;
+}

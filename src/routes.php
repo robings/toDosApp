@@ -16,5 +16,6 @@ return function (App $app) {
 //    });
 
     $app->get('/', 'SeeAllTodosController');
+    $app->get('/add', 'AddTodoController');
 
 };
