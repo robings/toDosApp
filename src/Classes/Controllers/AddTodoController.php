@@ -18,7 +18,29 @@ class AddTodoController
 
     public function __invoke(Request $request, Response $response, array $args)
     {
-        //get the post data and pass to call the model method to post to db
-        //return a redirect to /
+       $result= $request->getParsedBody();
+       if ($result['taskName']) {
+           $taskName = $result['taskName'];
+       }
+        if ($result['completedFlag']) {
+            $completedFlag = 1;
+        } else {
+            $completedFlag = 0;
+        }
+
+        if ($result['urgentFlag']) {
+            $urgentFlag = 1;
+        } else {
+            $urgentFlag = 0;
+        }
+
+        $success= $this->todoModel->addTodo($taskName, $completedFlag, $urgentFlag);
+        if ($success) {
+            return $response->withRedirect('/');
+        } else {
+            echo "Opps. Something went wrong";
+            echo "<a href=\"/\">Back to Todos Page</a>";
+        }
+
     }
 }
