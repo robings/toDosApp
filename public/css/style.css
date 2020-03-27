@@ -44,11 +44,19 @@ input {
     border: 1px solid #999999;
     border-radius: 5px;
     float: right;
-    color: #000000;
+    color: #FFFFFF;
+    margin: 0 5px;
+}
+
+.button.delete {
+    background-color: #FF0000;
+}
+
+.button.complete {
+    background-color: #719e40;
 }
 
 .button:hover {
-    color: red;
     border-color: #000000;
     cursor: pointer;
 }

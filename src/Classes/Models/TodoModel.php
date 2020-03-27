@@ -33,4 +33,11 @@ class TodoModel
         $query->bindParam(':id', $id);
         return $query->execute();
     }
+
+    public function completeTodo($id)
+    {
+        $query= $this->dbConnection->prepare( "UPDATE `todos` SET `completedFlag` = '1' WHERE `id` = :id");
+        $query->bindParam(':id', $id);
+        return $query->execute();
+    }
 }

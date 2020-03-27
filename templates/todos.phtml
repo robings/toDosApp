@@ -8,12 +8,12 @@ foreach ($todos as $todo) {
         } else {
             $currentTodoDisplay .='<div class="todoContainer"><div>';
         }
-        $currentTodoDisplay .= $todo['taskName'] . '<div class="delete button" data-id="' . $todo['id'] . '">X</div></div></div>';
+        $currentTodoDisplay .= $todo['taskName'] . '<div class="delete button" data-id="' . $todo['id'] . '">X</div><div class="complete button" data-id="' . $todo['id'] . '">&#10003;</div></div></div>';
 
 
     }
     if ($todo['deletedFlag'] != 1 && $todo['completedFlag'] !=0) {
-        $completedTodoDisplay .= '<div class="todoContainer"><div>' . $todo['taskName'] . '<div class="delete button" data-id="' . $todo['id'] . '">X</div></div><div>';
+        $completedTodoDisplay .= '<div class="todoContainer"><div>' . $todo['taskName'] . '<div class="delete button" data-id="' . $todo['id'] . '">X</div></div></div>';
     }
 
 }
