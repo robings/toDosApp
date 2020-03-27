@@ -45,3 +45,36 @@ function addCompleteEventListeners(completeButtons) {
         })
     })
 }
+
+function addEditEventListeners(editButtons) {
+    editButtons.forEach(function (editButton) {
+        editButton.addEventListener('click', (e) => {
+            idForEdit = e.target.dataset.id
+            console.log(idForEdit)
+            console.log(e.target.parentElement.className)
+            document.getElementById('taskName').value = e.target.parentNode.firstChild.textContent
+            if (e.target.parentElement.className == 'urgent') {
+                document.getElementById('urgentFlag').checked=true
+            }
+            document.getElementById('editForm').style.display='block'
+        })
+    })
+}
+
+function editFetch($idForComplete, $taskName, $completedFlag, $urgentFlag) {
+    fetch('/', {
+        method: 'PUT',
+        body: JSON.stringify({"id": idForComplete}),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+        .then((data) => data.json())
+        .then((success) => {
+            if (success['success']=1) {
+                window.location.reload(true)
+            } else {
+                console.log('Complete unsuccessful')
+            }
+        })
+}

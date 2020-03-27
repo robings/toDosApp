@@ -13,7 +13,7 @@ foreach ($todos as $todo) {
 
     }
     if ($todo['deletedFlag'] != 1 && $todo['completedFlag'] !=0) {
-        $completedTodoDisplay .= '<div class="todoContainer"><div>' . $todo['taskName'] . '<div class="delete button" data-id="' . $todo['id'] . '">X</div><div class="edit button" data-id="' . $todo['id'] . '">Edit</div><</div></div>';
+        $completedTodoDisplay .= '<div class="todoContainer"><div>' . $todo['taskName'] . '<div class="delete button" data-id="' . $todo['id'] . '">X</div><div class="edit button" data-id="' . $todo['id'] . '">Edit</div></div></div>';
     }
 
 }
@@ -44,6 +44,13 @@ foreach ($todos as $todo) {
     <h2>Already done:</h2>
     <?php echo $completedTodoDisplay; ?>
 </section>
+
+<form id="editForm">
+    <label>Task:</label><input type="text" id="taskName" name="taskName" />
+    <label>Urgent</label><input type="checkbox" id="urgentFlag" name="urgentFlag" />
+    <label>Completed</label><input type="checkbox" id="completedFlag" name="completedFlag" />
+    <button id="editFormButton">Submit</button>
+</form>
 </body>
 
 </html>
